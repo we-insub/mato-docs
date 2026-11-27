@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mato 사용설명서 | 처음 설치부터 유료 멤버십 연결까지</title>
+  <link rel="icon" href="icons/mato-32.png">
+  <link rel="stylesheet" href="doc.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand-link" href="guide.html">
+        <img src="icons/mato-48.png" width="38" height="38" alt="둥근 안경을 쓴 마토">
+        <span>Mato 사용설명서</span>
+      </a>
+      <nav class="nav" aria-label="문서 이동">
+        <a href="guide.html" aria-current="page">사용설명서</a>
+        <a href="legal.html#terms">이용약관</a>
+        <a href="legal.html#privacy">개인정보처리방침</a>
+        <a href="https://www.youtube.com/@Mato_coder" target="_blank" rel="noopener noreferrer">마토 유튜브 ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Mato 처음 사용 설명서</h1>
+      <p>Mato는 내 PC의 Chrome 브라우저와 앱 창을 Codex, Claude, Antigravity 같은 AI 앱에 연결해 주는 도구예요. 이 설명서 순서대로 따라 하면 코딩을 잘 몰라도 처음 설치부터 멤버십 무제한 인증까지 한 번에 마칠 수 있어요.</p>
+      <div class="callout warn">
+        <span class="em-warn">Google 로그인 필수</span> 로그인이 끝난 계정만 브리지 연결과 브라우저 제어, AI 연결 기능을 쓸 수 있어요. 비회원은 어떤 기능도 사용할 수 없어요.
+      </div>
+      <div class="toc" aria-label="목차">
+        <a href="#prep">1. 준비물</a>
+        <a href="#bridge-install">2. 로컬 브리지 설치</a>
+        <a href="#login">3. 약관 동의·로그인</a>
+        <a href="#connect">4. 브라우저 연결</a>
+        <a href="#ai-app">5. AI 앱 연결</a>
+        <a href="#membership">6. 멤버십 무제한 인증</a>
+        <a href="#cards">7. 화면별 기능 안내</a>
+        <a href="#withdraw">8. 로그아웃·회원탈퇴</a>
+        <a href="#faq">9. 자주 묻는 질문</a>
+        <a href="#contact">10. 문의하기</a>
+      </div>
+    </div>
+
+    <section id="prep">
+      <h2>1. 시작하기 전에 준비할 것</h2>
+      <ul>
+        <li><strong>Google Chrome</strong> 브라우저 (Windows 또는 macOS 13 이상)</li>
+        <li><strong>Node.js 22.13 이상</strong> — AI 앱과 Chrome을 이어 주는 로컬 브리지 프로그램이 Node.js 위에서 실행돼요.</li>
+        <li><strong>Google 계정</strong> — Mato 로그인과 유료 멤버십 확인에 꼭 필요해요.</li>
+      </ul>
+      <div class="callout">
+        Node.js가 설치돼 있는지 모르겠다면 Windows에서는 PowerShell, Mac에서는 터미널을 열고 <code>node -v</code>를 입력해 보세요. <code>v22.13.0</code> 이상이 나오면 바로 다음 단계로 넘어가면 돼요.
+      </div>
+    </section>
+
+    <section id="bridge-install">
+      <h2>2. 1단계: 내 PC에 로컬 브리지 설치하기</h2>
+      <p>Chrome 확장 프로그램은 보안상 내 PC의 AI 앱과 직접 통신할 수 없어서, 중간 다리 역할을 하는 로컬 브리지를 내 PC에 한 번 등록해야 해요.</p>
+      <ol>
+        <li>다운로드한 Mato 압축 파일을 바탕화면이나 문서 폴더처럼 <strong>위치가 바뀌지 않는 폴더</strong>에 풀어 두세요. 설치 뒤에 폴더 이름을 바꾸거나 옮기면 연결이 끊겨서 다시 설치해야 해요.</li>
+        <li>OS에 맞게 아래 설치 명령을 한 번 실행하세요.
+          <ul>
+            <li><strong>Windows</strong>: Mato 폴더에서 PowerShell을 열고 <code>.\install.ps1</code>을 실행하세요.</li>
+            <li><strong>macOS</strong>: 터미널을 열고 Mato 폴더로 이동한 뒤 <code>node install-macos.mjs</code>를 실행하세요. 앱 창 제어까지 쓰려면 Xcode Command Line Tools(<code>xcode-select --install</code>)가 필요해요.</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section id="login">
+      <h2>3. 2단계: 확장 열기, 약관 동의와 Google 로그인</h2>
+      <ol>
+        <li>Chrome 오른쪽 위 확장 프로그램 아이콘에서 <span class="em-action">Mato</span>를 눌러 창을 여세요. 화면이 좁게 느껴진다면 맨 아래 <span class="em-action">페이지 열기</span>를 눌러 큰 화면으로 띄워 두고 쓰면 편해요.</li>
+        <li>맨 위 <strong>Google 계정</strong> 카드에서 <a href="legal.html#terms" target="_blank" rel="noopener noreferrer">이용약관</a>과 <a href="legal.html#privacy" target="_blank" rel="noopener noreferrer">개인정보처리방침</a>을 확인한 뒤 <span class="em-action">동의 체크박스</span>를 누르세요. 체크해야 로그인 버튼이 열려요.</li>
+        <li><span class="em-action">Google로 로그인</span>을 누르고, Mato에서 사용할 본인 Google 계정을 선택하세요.</li>
+      </ol>
+      <p class="muted">참고: Chrome 웹 스토어가 아닌 개발자 모드로 직접 폴더를 불러온 경우에는 <code>chrome://extensions</code>에서 개발자 모드를 켠 뒤 <code>Mato\extension</code> 폴더를 선택해 추가하면 돼요.</p>
+    </section>
+
+    <section id="connect">
+      <h2>4. 3단계: 로컬 브리지 연결과 브라우저 이름 정하기</h2>
+      <ol>
+        <li><strong>브라우저 연결</strong> 카드에서 파란색 <span class="em-action">로컬 브리지 연결</span> 버튼을 누르세요. 오른쪽 배지가 <span class="em-ok">● 연결됨</span>으로 바뀌면 준비가 끝난 거예요.</li>
+        <li><strong>브라우저 이름</strong> 칸에 <code>집 노트북</code>, <code>회사컴</code>처럼 알아보기 쉬운 이름을 적고 <span class="em-action">이름 저장</span>을 누르세요. 여러 PC나 Chrome 프로필을 함께 쓸 때 AI가 어느 창을 조작할지 헷갈리지 않아요.</li>
+      </ol>
+      <div class="callout warn">
+        <span class="em-warn">연결이 안 될 때</span> “로컬 연결을 열 수 없습니다”가 뜨면 2단계의 설치기(<code>install.ps1</code> 또는 <code>node install-macos.mjs</code>)를 아직 실행하지 않았거나 설치 뒤에 Mato 폴더를 옮긴 경우예요. 설치기를 다시 실행한 뒤 연결 버튼을 누르세요.
+      </div>
+    </section>
+
+    <section id="ai-app">
+      <h2>5. 4단계: 사용하는 AI 앱에 Mato 연결하기</h2>
+      <p><strong>MCP 연결 안내</strong> 막대를 눌러 펼친 뒤 내가 쓰는 AI 앱에 맞춰 등록하면 돼요.</p>
+      <ol>
+        <li><strong>사용할 앱</strong> 목록에서 <strong>Codex</strong>, <strong>Claude Code</strong>, <strong>Claude Desktop</strong>, <strong>Antigravity</strong> 중 하나를 고르세요.</li>
+        <li>아래 상자에 내 PC의 OS(Windows 또는 macOS)와 Node 경로에 맞는 안내 문구가 자동으로 채워져요.</li>
+        <li><span class="em-action">프롬프트 복사</span> 버튼을 누르고, 그 AI 앱 대화창에 그대로 붙여넣어 실행하세요. AI가 설정을 마친 뒤 내 브라우저 이름(예: <code>회사컴</code>)을 알려주면 연결에 성공한 거예요.</li>
+      </ol>
+    </section>
+
+    <section id="membership">
+      <h2>6. 5단계: 마토 유튜브 유료 멤버십 무제한 인증하기</h2>
+      <p>기본 계정도 Google 로그인을 마치면 바로 쓸 수 있지만 하루 호출 수와 동시 연결 수에 제한이 있어요. 마토 유튜브 채널 유료 멤버십 회원이라면 간단한 인증만으로 제한 없이 쓸 수 있어요.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>하루 MCP 호출</th>
+            <th>동시 연결 PC · 브라우저</th>
+            <th>병렬 동시 처리</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>일반 로그인 계정</strong></td>
+            <td>하루 500회 (매일 오전 2시 초기화)</td>
+            <td>PC 2대 · 브라우저 2개</td>
+            <td>최대 3개</td>
+          </tr>
+          <tr>
+            <td><span class="em-ok">유료 멤버십 인증 회원</span></td>
+            <td><span class="em-ok">횟수 무제한</span></td>
+            <td><span class="em-ok">PC 5대 · 브라우저 5개</span></td>
+            <td><span class="em-ok">최대 10개</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>멤버십 인증 순서</h3>
+      <ol>
+        <li><strong>MCP 연결 안내</strong>를 펼친 뒤 <span class="em-action">내 멤버십 확인</span> 버튼을 누르세요.</li>
+        <li>Google 권한 창이 열리면 멤버십에 가입한 본인 YouTube 채널 계정을 선택해 허용하세요.</li>
+        <li>허용이 끝나면 등급 배지가 <span class="em-ok">유료 멤버십</span>으로 바뀌고 오늘 사용량이 <span class="em-ok">무제한</span>으로 전환돼요.</li>
+      </ol>
+      <div class="callout">
+        <strong>PC 사양에 맞춘 병렬 개수 조절</strong><br>
+        유료 멤버십은 최대 10개까지 동시에 돌릴 수 있지만, 개인 PC 사양(CPU·메모리)에 따라 창이 많아지면 느려질 수 있어요. 이럴 때는 AI 에이전트에게 <span class="em-action">“병렬은 3개씩만 실행해 줘”</span>처럼 MCP 명령으로 원하는 대수를 직접 줄여서 지시하면 쾌적하게 쓸 수 있어요.<br>
+        반대로 일반 계정이 7개처럼 등급 한도를 넘는 병렬 작업을 요청하면 Mato Chrome 확장이 <span class="em-warn">등급 한도(최대 3개)</span>에 맞춰 자동으로 차단해요.
+      </div>
+      <p class="muted">안내: 일일 호출 수는 매일 한국시간 오전 2시에 0으로 초기화돼요. 비정상 종료된 브라우저 연결 자리는 마지막 응답 후 90초가 지나면 자동으로 비워져요.</p>
+    </section>
+
+    <section id="cards">
+      <h2>7. 대시보드 카드별 상세 사용법</h2>
+      <h3>브라우저 연결 · 기기 관리</h3>
+      <p>같은 Google 계정으로 연결된 PC와 브라우저 목록을 보여 줘요. PC나 브라우저 한도가 다 찼다면 <span class="em-action">체크박스</span>로 안 쓰는 기기를 고른 뒤 <span class="em-action">선택한 연결 해제</span>를 누르면 자리를 비울 수 있어요.</p>
+
+      <h3>현재 탭</h3>
+      <ul>
+        <li><span class="em-action">본문 읽기</span>: 지금 보고 있는 웹페이지 글과 버튼 목록을 읽어요.</li>
+        <li><span class="em-action">화면 캡처</span>: 현재 탭 화면을 PNG 이미지로 찍어 저장해요.</li>
+        <li><span class="em-action">탭 진단 켜기</span>: 콘솔 로그, 같은 사이트 네트워크 응답, 성능 측정, 키 입력, 좌표 클릭까지 써야 할 때 먼저 켜세요.</li>
+        <li><span class="em-action">GIF 녹화</span>: 화면이나 탭을 최대 640×480, 초당 5프레임, 30초 길이의 GIF로 녹화해 저장해요.</li>
+      </ul>
+
+      <h3>탭 목록</h3>
+      <p>열린 탭을 창별로 묶어 보여 줘요. 위쪽 드롭다운에서 같은 PC에 연결된 다른 Chrome 프로필을 고르거나 <strong>창 필터</strong>로 원하는 창만 추려 볼 수 있어요. 탭 이름을 누르면 그 탭으로 바로 넘어가고, 오른쪽 <span class="em-warn">×</span> 버튼을 누르면 탭을 바로 닫아요.</p>
+
+      <h3>앱 창 공유</h3>
+      <p>브라우저가 아닌 Windows나 Mac의 다른 프로그램 창을 AI가 조작하게 할 때 써요. <span class="em-action">창 선택</span>을 눌러 직접 고른 창만 제어되며, 작업이 끝나면 <span class="em-action">공유 중지</span>를 눌러 언제든 멈출 수 있어요. Mac은 처음 쓸 때 시스템 설정에서 <strong>손쉬운 사용</strong>과 <strong>화면 기록</strong> 권한을 켜야 해요.</p>
+
+      <h3>추가 도구 권한</h3>
+      <ul>
+        <li><strong>전체 사이트 허용</strong>: 끄면 아래 <span class="em-action">이 사이트 허용</span> 버튼으로 지정한 사이트만 AI가 읽고 조작해요.</li>
+        <li><strong>조사 완료 시 AI가 연 탭 닫기</strong>: 켜 두면 AI가 조사하려고 새로 연 탭을 작업이 끝났을 때 자동으로 닫아 줘요.</li>
+        <li><strong>병렬 실행</strong>: 여러 작업을 한꺼번에 처리할지 고르며, 한도는 계정 등급(일반 3개 · 멤버십 10개)에 맞춰 확장에서 자동으로 막아 줘요. 멤버십 회원도 PC가 느려지면 AI에게 “한 번에 4개만 병렬로 해 줘”처럼 직접 대수를 낮춰 지시할 수 있어요.</li>
+        <li><strong>북마크 · 방문 기록 · 다운로드 허용</strong>: AI가 내 북마크, 방문 기록, 다운로드 목록을 조회해야 할 때만 필요에 맞게 켜세요.</li>
+      </ul>
+    </section>
+
+    <section id="withdraw">
+      <h2>8. 로그아웃과 회원탈퇴</h2>
+      <ul>
+        <li><span class="em-action">로그아웃</span>: Google 계정 카드 오른쪽의 로그아웃을 누르면 로컬 브리지 연결도 함께 끊기고 모든 도구가 잠겨요. 언제든 다시 로그인해 쓸 수 있어요.</li>
+        <li><span class="em-warn">회원탈퇴 (재가입 불가)</span>: 로그아웃 옆 <span class="em-warn">회원탈퇴</span>를 누르고 확인하면 연결된 PC·브라우저·사용량·YouTube 채널 연동 기록이 서버에서 모두 삭제돼요. <strong>탈퇴 처리가 끝나면 같은 Google 계정으로는 다시 가입하거나 Mato를 쓸 수 없어요.</strong></li>
+      </ul>
+    </section>
+
+    <section id="faq">
+      <h2>9. 자주 묻는 질문</h2>
+      <h3>유료 멤버십에 가입했는데도 일반 등급으로 나와요. 어떻게 하나요?</h3>
+      <p><strong>MCP 연결 안내</strong>를 열고 <span class="em-action">내 멤버십 확인</span>을 눌러 멤버십에 가입한 YouTube 채널을 연결해야 해요. 멤버십에 방금 가입했다면 운영자 명단 갱신(최대 하루 1회) 뒤 자동으로 반영돼요.</p>
+
+      <h3>AI가 웹페이지 내용을 못 읽는다고 해요. 왜 그런가요?</h3>
+      <p><code>chrome://</code>으로 시작하는 브라우저 내부 설정 페이지는 보안상 제어할 수 없어요. 일반 웹페이지(<code>http://</code> 또는 <code>https://</code>)인지 확인하고, <strong>추가 도구 권한</strong>에서 <strong>전체 사이트 허용</strong>이나 <strong>이 사이트 허용</strong>이 켜져 있는지 확인해 주세요.</p>
+
+      <h3>회사를 옮기거나 PC를 바꾸면 어떻게 연결하나요?</h3>
+      <p>새 PC에서 1단계 설치와 로그인을 마친 뒤 기존 PC가 한도에 걸렸다면, <strong>브라우저 연결 → 연결된 PC</strong>에서 예전 PC를 체크해 <span class="em-action">선택한 연결 해제</span>를 누르면 돼요.</p>
+    </section>
+
+    <section id="contact">
+      <h2>10. 문의 및 지원 안내</h2>
+      <p>설치 오류, 멤버십 인증 문의, 버그 제보는 별도 이메일이나 외부 사이트가 아니라 <a href="https://www.youtube.com/@Mato_coder" target="_blank" rel="noopener noreferrer">마토 유튜브 채널(@Mato_coder) ↗</a>을 통해 남겨 주세요.</p>
+    </section>
+
+    <footer>
+      Mato · 기준 채널 <a href="https://www.youtube.com/@Mato_coder" target="_blank" rel="noopener noreferrer">@Mato_coder</a> · <a href="legal.html#terms">이용약관</a> · <a href="legal.html#privacy">개인정보처리방침</a>
+    </footer>
+  </main>
+</body>
+</html>

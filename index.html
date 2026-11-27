@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mato | 내 브라우저를 위한 로컬 MCP 도구</title>
+  <link rel="icon" href="icons/mato-32.png">
+  <link rel="stylesheet" href="doc.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand-link" href="index.html">
+        <img src="icons/mato-48.png" width="38" height="38" alt="둥근 안경을 쓴 마토">
+        <span>Mato</span>
+      </a>
+      <nav class="nav" aria-label="문서 이동">
+        <a href="index.html" aria-current="page">홈</a>
+        <a href="guide.html">사용설명서</a>
+        <a href="legal.html#terms">이용약관</a>
+        <a href="legal.html#privacy">개인정보처리방침</a>
+        <a href="https://www.youtube.com/@Mato_coder" target="_blank" rel="noopener noreferrer">마토 유튜브 ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Mato — 내 브라우저를 위한 로컬 MCP 도구</h1>
+      <p>Mato는 사용자 PC에 설치된 Google Chrome 브라우저와 로컬 앱 창을 사용자가 직접 지정한 로컬 MCP 클라이언트(Codex, Claude Code, Claude Desktop, Antigravity)에 안전하게 연결해 웹페이지 조회, 탭 관리, 화면 캡처, 앱 창 제어 기능을 제공하는 Chrome 확장 프로그램이에요.</p>
+      <div class="toc" aria-label="바로가기">
+        <a href="guide.html">초보자 사용설명서</a>
+        <a href="legal.html#terms">이용약관</a>
+        <a href="legal.html#privacy">개인정보처리방침</a>
+        <a href="https://www.youtube.com/@Mato_coder" target="_blank" rel="noopener noreferrer">문의 · 마토 유튜브 ↗</a>
+      </div>
+    </div>
+
+    <section>
+      <h2>주요 기능과 Google 계정 사용 안내</h2>
+      <ul>
+        <li><strong>Google 로그인 필수</strong>: 본인 명의의 Google 계정으로 로그인하고 이용약관에 동의한 사용자만 로컬 브리지 연결과 브라우저 도구를 사용할 수 있어요.</li>
+        <li><strong>YouTube 유료 멤버십 연동(선택)</strong>: <span class="em-action">내 멤버십 확인</span>을 누를 때만 <code>youtube.readonly</code> 권한으로 본인의 YouTube 채널 ID를 확인하며, 원본 채널 ID는 저장하지 않고 단방향 해시(<code>HMAC-SHA256</code>)로 마토 채널(@Mato_coder) 유료 멤버십 여부만 대조해요.</li>
+        <li><strong>로컬 처리 원칙</strong>: 웹페이지 본문, 열린 탭 주소·제목, 스크린샷, 콘솔·네트워크 진단 데이터는 사용자 PC의 로컬 Chrome과 로컬 AI 앱 사이에서만 처리되며 외부 서버에 저장하지 않아요.</li>
+      </ul>
+      <div class="callout ok">
+        <span class="em-ok">Google API Limited Use 준수</span> Mato는 Google·YouTube API로 확인한 정보를 오직 로그인 인증 및 유료 멤버십 확인 목적에만 사용하며, 광고·제3자 판매·AI 모델 학습에 사용하지 않아요.
+      </div>
+    </section>
+
+    <section>
+      <h2>공식 문서 및 문의처</h2>
+      <ul>
+        <li><a href="guide.html"><strong>Mato 처음 사용 설명서</strong></a> — 브리지 설치부터 멤버십 무제한 인증까지 단계별 안내</li>
+        <li><a href="legal.html#terms"><strong>Mato 이용약관</strong></a> — 이용 자격, 일반·멤버십 한도, 로그아웃 및 회원탈퇴 안내</li>
+        <li><a href="legal.html#privacy"><strong>Mato 개인정보처리방침</strong></a> — 수집 항목, 국외 이전(Supabase 일본 도쿄 리전), 보관 기간 및 파기, Google API Limited Use 준수 안내</li>
+        <li><strong>운영 채널 및 문의</strong>: <a href="https://www.youtube.com/@Mato_coder" target="_blank" rel="noopener noreferrer">youtube.com/@Mato_coder ↗</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      Mato · 운영 및 문의: <a href="https://www.youtube.com/@Mato_coder" target="_blank" rel="noopener noreferrer">youtube.com/@Mato_coder</a> · <a href="legal.html#privacy">개인정보처리방침</a>
+    </footer>
+  </main>
+</body>
+</html>
